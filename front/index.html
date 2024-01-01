@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SSE Example</title>
+    <script>
+      var evtSource = new EventSource("http://localhost:5055/events");
+
+      evtSource.onmessage = function (e) {
+        document.getElementById("messages").innerHTML += (`<h2>${e.data}</h2>`);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Server-Sent Events Example</h1>
+    <div id="messages"></div>
+  </body>
+</html>
